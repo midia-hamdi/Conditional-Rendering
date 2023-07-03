@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Greeting from "./Greeting"
 import Login from "./Login"
 import Logout from "./Logout"
+import Message from "./Message"
 
 export default class Conditional  extends Component {
 
@@ -37,6 +38,7 @@ export default class Conditional  extends Component {
         <Greeting Logedin={this.state.Logedin}/>
         {this.state.Logedin ? <Logout handleClick={() => this.handleLogout()} /> : <Login handleClick={() => this.handleLogin()} />}
         {/* {this.state.Logedin && <p>use is logged in</p>} */}
+        <Message Logedin={this.state.Logedin} />
       </div>
     )
   }

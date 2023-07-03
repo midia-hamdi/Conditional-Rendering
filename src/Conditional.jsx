@@ -3,25 +3,39 @@ import Greeting from "./Greeting"
 import Login from "./Login"
 import Logout from "./Logout"
 
-export default class  extends Component {
+export default class Conditional  extends Component {
 
   state ={
     Logedin: true
   }
 
+  handleLogout(){
+    this.setState({
+        Logedin: false
+    })
+  } 
+
+  handleLogin(){
+    this.setState({
+        Logedin: true
+    })
+  }
+
+
+
   render() {
 
     let button = null; 
     if (this.state.Logedin ){
-        button =  <Logout />
+        button =  <Logout handleClick={() => this.handleLogout()} />
     } else {
-        button =  <Login />
+        button =  <Login handleClick={() => this.handleLogin()} />
     }
 
     return (
       <div>
         <Greeting Logedin={this.state.Logedin}/>
-        {button }
+        {button}
       </div>
     )
   }

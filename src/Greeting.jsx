@@ -3,7 +3,7 @@ import UserGreeting from "./UserGreeting"
 import GusetGreeting from "./GusetGreeting"
 
 export default function Greeting(props) {
-    if(props.isLoggedIn) {
+    if(props.Logedin) {
       return <UserGreeting />
     } 
       return <GusetGreeting />

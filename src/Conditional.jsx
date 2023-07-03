@@ -35,8 +35,8 @@ export default class Conditional  extends Component {
     return (
       <div>
         <Greeting Logedin={this.state.Logedin}/>
-        {button}
-        {this.state.Logedin && <p>use is logged in</p>}
+        {this.state.Logedin ? <Logout handleClick={() => this.handleLogout()} /> : <Login handleClick={() => this.handleLogin()} />}
+        {/* {this.state.Logedin && <p>use is logged in</p>} */}
       </div>
     )
   }
